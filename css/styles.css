@@ -1,0 +1,454 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none; /*quita los estilos de las listas*/
+    text-decoration: none; /*quita las lineas de los enlaces*/
+    font-family: 'Cambria', serif;
+}
+
+body {
+    background-image: url(../img/Fond/fondo1.png);
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
+}
+/* Estilos de la navbar */
+
+nav {
+    min-height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    background:linear-gradient(
+        90deg,
+        rgba(255, 49, 49)0%,
+        rgba(255, 145, 77)70%
+    );
+    
+    font-weight: bold;
+}
+.nav-item{
+    padding: 5px;
+}
+
+.nav-link{
+    padding: 5px;
+}
+
+
+.navbar-brand img {
+    height: 3rem;
+    width: auto;
+}
+
+/*Estilo del Carousel*/
+
+.contenedor{
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-contenedor{
+    width: 100%;
+    display: flex;
+}
+
+.contenido-slider{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: #696969;
+}
+
+.contenido-slider > img{
+    width: 350px;
+    border: 6px solid #3CB371;
+}
+
+.contenido-slider > div{
+    width: 40%;
+}
+
+.contenido-slider h2{
+    font-weight: 300;
+    text-align: justify;
+    line-height: 30px;
+    color: black;
+}
+
+.contenido-slider > p{
+    font-weight: 10px;
+    text-align: justify;
+    line-height: 10px;
+    letter-spacing: normal;
+}
+
+.btn-ver-carousel {
+    font-size: 16px;
+    background-color: transparent;
+    display: block;
+    padding: 0.2rem 2.3rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 25px;
+    border: #3CB371 solid;
+    margin-left: 200px;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.btn-ver-carousel:hover{
+    background-color: #3CB371;
+    border: none;
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 900px) {
+    .contenido-slider > img {
+        width: 250px;
+    }
+
+    .contenido-slider h2 {
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contenido-slider {
+        flex-direction: column;
+        height: auto; /* Ajustar la altura automática para adaptarse al contenido */
+    }
+
+    .contenido-slider > img {
+        width: 80%;
+        margin-bottom: 20px; /* Espacio entre la imagen y el contenido */
+        order: 1; /* Cambia el orden para que la imagen aparezca primero */
+    }
+
+    .contenido-slider > div {
+        width: 100%;
+        text-align: center;
+        order: 2; /* Cambia el orden para que el contenido aparezca después */
+    }
+
+    .btn-ver-carousel {
+        margin: 10px auto; /* Centrar el botón */
+    }
+}
+
+/*Contenedor Principal de videos y tabla*/
+.contenedor-videos-tabla {
+    display: flex; /* Utilizamos flexbox para alinear los elementos */
+    justify-content: space-between; /* Distribuye los elementos a los extremos */
+    gap: 10px; /* Espacio entre los contenedores */
+    padding: 10px 20px;
+}
+
+
+/* Contenedor de los videos */
+.contenedor-videos {
+    flex: 1;
+    margin-right: 10px;
+    background-color: #696969; /* Color de fondo */
+    color: black;
+    border: 2px solid #3CB371;/* Borde delgado */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 15px; /* Espacio interno */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;
+}
+.content-videos{
+    text-align: center;
+}
+
+.content-videos > h1 {
+    font-size: 50px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: #3CB371 solid 2px;
+    display: inline-block;
+}
+
+/* Contenedor de los iframes de videos */
+.videos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 5px; /* Espacio de 5px entre los iframes */
+}
+
+/* Ajuste de los iframes */
+.videos iframe {
+    width: 100%; /* Ancho del 100% del contenedor */
+    height: 200px; /* Altura fija para mantener proporción 16:9 */
+    transition: transform 0.3s ease;
+}
+
+.videos iframe:hover {
+    transform: scale(1.05); /* Escalar ligeramente al pasar el cursor */
+}
+
+.sponsor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 35px;
+}
+
+.sponsor img{
+    height: 50px;
+    width: auto;
+    max-width: 30%;
+}
+
+/*Tabla de Puntos*/
+.contenedor-principal-tabla {
+    flex: 1;
+    display: flex;
+    align-items: stretch; /* Ajustar la altura automáticamente */
+    margin-right: 20px;
+}
+
+/* Contenedor de la tabla */
+.contenedor-tabla {
+    background-color: #696969; /* Fondo blanco */
+    border: 2px solid #3CB371; /* Borde sólido */
+    border-radius: 8px; /* Bordes redondeados */
+    width: 40%; /* Ancho deseado para la tabla */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+    overflow: hidden; /* Evita que los bordes redondeados se vean mal */
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Encabezados de la tabla */
+.contenedor-tabla h1,
+.contenedor-tabla h2 {
+    margin: 10px 0; /* Márgenes internos */
+    color: black; /* Color de texto */
+}
+
+/* Estilo para el borde inferior de h1 */
+.contenedor-tabla h1 {
+    font-weight: 500;
+    border-bottom: #3CB371 solid 2px;
+    display: inline-block;
+}
+
+/* Estilo para el borde inferior de h2 */
+.contenedor-tabla h2 {
+    font-weight: 500;
+    border-bottom: #3CB371 solid 2px;
+    display: inline-block;
+}
+
+/* Estilos de la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse; /* Colapsa los bordes de las celdas */
+}
+
+/* Estilo de las celdas y encabezados */
+.table th,
+.table td {
+    border: 1px solid #ddd; /* Borde ligero */
+    padding: 12px; /* Espaciado interno */
+    text-align: center; /* Centrado del texto */
+}
+
+/* Estilo para los números del 1 al 6 */
+.table tbody tr:nth-child(-n+6) th,
+.table tbody tr:nth-child(-n+6) td:first-child {
+    background-color: #9ACD32; /* Fondo verde */
+    color: #fff; /* Texto blanco */
+}
+
+/* Estilo para el número 7 */
+.table tbody tr:nth-child(7) th,
+.table tbody tr:nth-child(7) td:first-child {
+    background-color: #FFFF00; /* Fondo amarillo */
+    color: #333; /* Texto negro */
+}
+
+/* Estilos para los números 8 al 10 */
+.table tbody tr:nth-child(n+8):nth-child(-n+10) th,
+.table tbody tr:nth-child(n+8):nth-child(-n+10) td {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333; /* Texto negro */
+}
+
+/* Estilos para la fila de Argentina */
+.table tbody tr:nth-child(1) td:nth-child(2) {
+    background-image: url('../img/Bandera_America_Sur/Bandera_Argentina.png');
+}
+
+/* Estilos para la fila de Uruguay */
+.table tbody tr:nth-child(2) td:nth-child(2) {
+    background-image: url('../img/Bandera_America_Sur/Bandera_Uruguay.webp');
+}
+
+/* Estilos para la fila de Colombia */
+.table tbody tr:nth-child(3) td:nth-child(2) {
+    background-image: url('../img/Bandera_America_Sur/Bandera_Colombia.png');
+}
+
+/* Estilos para la fila de Venezuela */
+.table tbody tr:nth-child(4) td:nth-child(2) {
+    background-image: url('../img/Bandera_America_Sur/Bandera_Venezuela.png');
+}
+
+/* Estilos para la fila de Ecuador */
+.table tbody tr:nth-child(5) td:nth-child(2) {
+    background-image: url('../img/Bandera_America_Sur/Bandera_Ecuador.svg');
+}
+
+/* Estilos para la fila de Brasil */
+.table tbody tr:nth-child(6) td:nth-child(2) {
+    background-image: url('../img/Bandera_America_Sur/Bandera_Brasil.png');
+}
+
+/* Estilos para la fila de Paraguay */
+.table tbody tr:nth-child(7) td:nth-child(2) {
+    background-image: url('../img/Bandera_America_Sur/Bandera_Paraguay.png');
+}
+
+/* Estilos para la fila de Chile */
+.table tbody tr:nth-child(8) td:nth-child(2) {
+    background-image: url('../img/Bandera_America_Sur/Bandera_Chile.png');
+}
+
+/* Estilos para la fila de Bolivia */
+.table tbody tr:nth-child(9) td:nth-child(2) {
+    background-image: url('../img/Bandera_America_Sur/Bandera_Bolivia.jpg');
+}
+
+/* Estilos para la fila de Perú */
+.table tbody tr:nth-child(10) td:nth-child(2) {
+    background-image: url('../img/Bandera_America_Sur/Bandera_Peru.png');
+}
+
+/* Estilos comunes para todas las filas */
+.table tbody tr td:nth-child(2) {
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Color de texto blanco */
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra de texto */
+}
+
+@media (max-width: 768px) {
+    .contenedor-videos-tabla {
+        flex-direction: column; /* Apilar elementos en dispositivos móviles */
+    }
+
+    .contenedor-videos,
+    .contenedor-principal-tabla {
+        width: 100%; /* Ancho completo en dispositivos móviles */
+        margin-right: 0; /* Sin margen derecho en dispositivos móviles */
+    }
+
+    .videos {
+        grid-template-columns: repeat(1, 1fr); /* Cambiar a una columna en dispositivos móviles */
+    }
+
+    .videos iframe {
+        height: 150px; /* Reducir altura de los iframes en dispositivos móviles */
+    }
+
+    .sponsor {
+        flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en dispositivos móviles */
+        justify-content: center; /* Centrar imágenes horizontalmente */
+    }
+
+    .sponsor img {
+        height: 40px; /* Altura más pequeña para las imágenes de patrocinadores en móviles */
+        width: auto; /* Ancho automático para mantener la proporción */
+        max-width: 100%; /* Asegura que las imágenes no se amplíen más allá de su tamaño original */
+        margin: 5px; /* Espacio entre las imágenes */
+    }
+}
+
+
+/*Estilo del Footer*/
+
+footer{
+    background:linear-gradient(
+        90deg,
+        rgba(166, 166, 166)60%,
+        rgba(255, 255, 255)90%
+    );
+    padding: 80px 0;
+}
+
+.footer-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-links{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-links h4{
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: 2px solid #00C3FF;
+    padding: 10%;
+    display: inline-block;
+}
+
+.footer-links ul li a{
+    font-size: 18px;
+    color: black;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover{
+    color: #ffffff;
+    padding-left: 6px;
+}
+
+.social-links a{
+    display: inline-block;
+    min-height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all .5s ease;
+}
+
+.social-links a img{
+    width: 10px;
+    height: 10px;
+}
+
+.social-links a:hover{
+    background-color: #00C3FF;
+    transform: scale(1.5);
+    
+}
+
+@media(max-width:991px){
+    .footer-row{
+        text-align: center;
+    }
+
+    .footer-links{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
